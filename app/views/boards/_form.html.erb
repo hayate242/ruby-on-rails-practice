@@ -1,0 +1,26 @@
+<%# @boardを第一引数　fはfフォームビルダーオブジェクト%>
+<%# ローカル変数に変更(直接インスタンス変数を参照するのはerb側からわかりにくくなる)%>
+<% if flash[:error_messages] %>
+  <div class="alert alert-danger">
+    <ul>
+      <% flash[:error_messages].each do |msg| %>
+        <li><%= msg %></li>
+      <% end%>
+    </ul>
+  </div>
+<% end %>
+<%= form_for board do |f| %>
+  <div class="form-group">
+    <%= f.label :name, '名前' %>
+    <%= f.text_field :name, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, '本文' %>
+    <%= f.text_field :body, class: 'form-control', rows: 10%>
+  </div>
+  <%= f.submit '保存', class: 'btn btn-primary'%>
+<% end %>

@@ -33,6 +33,11 @@ gem 'jbuilder', '~> 2.5'
 # bootstrapの設定
 gem 'bootstrap', '~>4.0.0'
 gem 'mini_racer'
+# ページネーション用
+gem 'kaminari'
+# エラーメッセージ日本語化
+gem 'rails-i18n'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

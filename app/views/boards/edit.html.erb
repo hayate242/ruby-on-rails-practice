@@ -5,19 +5,5 @@
   </div>
 </div>
 
-<%# @boardを第一引数　fはfフォームビルダーオブジェクト%>
-<%= form_for @board do |f| %>
-  <div class="form-group">
-    <%= f.label :name, '名前' %>
-    <%= f.text_field :name, class: 'form-control'%>
-  </div>
-  <div class="form-group">
-    <%= f.label :title, 'タイトル' %>
-    <%= f.text_field :title, class: 'form-control'%>
-  </div>
-  <div class="form-group">
-    <%= f.label :body, '本文' %>
-    <%= f.text_field :body, class: 'form-control', rows: 10%>
-  </div>
-  <%= f.submit '保存', class: 'btn btn-primary'%>
-<% end %>
+<%# パーシャル(共通パーツ)の呼び出し%>
+<%= render partial: "form", locals: { board: @board} %>

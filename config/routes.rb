@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   # get 'boards/:id', to: 'boards#show'
 
   # 自動でルートを追加
-  resources :boards, only: [:index, :new, :create, :show, :edit, :update]
+  # resources :boards, only: [:index, :new, :create, :show, :edit, :update]
+  resources :boards
 end

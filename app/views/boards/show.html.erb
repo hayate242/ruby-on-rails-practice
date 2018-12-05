@@ -6,12 +6,11 @@
   </div>
 </div>
 
-<div class="card">
-  <div class="card-header">
-    <h4><%= @board.title %></h4>
-  </div>
-  <div class="card-body">
-    <p class="card-text"><%= simple_format(@board.body) %></p>
-    <p class="text-right font-weight-bold mr-10"><%= @board.name %></p>
-  </div>
-</div>
+<% #新しく作った時にメッセージを表示する %>
+<% if flash[:notice] %>
+  <div class="alert alert-primary"><%= flash[:notice] %></div>
+<% end %>
+<%# objectとした場合は，ファイル名のローカル変数が自動で作られる
+　下の記述でもok%>
+<%= render partial: "board", object: @board %>
+<%#= render @board %>

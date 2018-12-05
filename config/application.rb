@@ -13,5 +13,7 @@ module App
     # -- all .rb files in that directory are automatically loaded.
     # timezoneの設定
     config.time_zone = 'Tokyo'
+    # kaminari　日本語化
+    config.i18n.default_locale = :ja
   end
 end
